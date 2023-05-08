@@ -8,7 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app">{{nextYear('안녕하세요~!')}}</div>
+    <div id="app">
+      {{nextYear('안녕하세요~!')}}
+      <input :type="type" v-bind:value="inputData" />
+      <a :href="getLink('/kossiecoder')">유튜브 링크</a>
+    </div>
     <script>
       new Vue({
         el: "#app", // 뷰 인스턴스가 생성 되면서 id="app" => 이 태그 안에는 vue 코드 작성 가능
@@ -17,8 +21,14 @@
             name: "킹정아",
             age: 20,
           },
+          inputData: "hello",
+          type: "text",
+          link: "https://www.youtube.com",
         },
         methods: {
+          getLink(channel) {
+            return this.link + channel;
+          },
           // 함수 ver.1
           nextYear(greeting) {
             return `${greeting}! ${this.person.name}은(는) 내년에 ${
