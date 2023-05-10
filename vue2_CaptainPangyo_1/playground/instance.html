@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      var vm = new Vue({
+        // body 태그 안에서 app이라는 아이디를 가진 tag를 찾아서 인스턴스를 붙이겠다는 의미 이 element를 사용함으로써 해당 태그 안에서  vue의 기능과 속성이 유효해진다.
+        el: "#app",
+        data: {
+          message: "hi",
+        },
+      });
+    </script>
+  </body>
+</html>
