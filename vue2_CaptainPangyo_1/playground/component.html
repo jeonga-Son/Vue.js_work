@@ -10,11 +10,19 @@
     <div id="app">
       <app-header></app-header>
       <app-content></app-content>
+      <app-footer></app-footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+      /*
+        전역으로 사용해야 하는 컴포넌트
+        => 플러그인, 라이브러리
+
+        지역으로 사용하는 컴포넌트
+        => 그 외 나머지 대부분
+      */
       // Vue.component('컴포넌트 이름', 컴포넌트 내용);
-      // 전역 컴포넌트
+      // 전역 컴포넌트 등록 방식
       Vue.component("app-header", {
         template: "<h1>Header</h1>",
       });
@@ -25,6 +33,12 @@
 
       new Vue({
         el: "#app",
+        // 지역 컴포넌트 등록 방식
+        components: {
+          "app-footer": {
+            template: "<footer>footer</footer>",
+          },
+        },
       });
     </script>
   </body>
