@@ -12,11 +12,13 @@
 
     <script>
       var vm = new Vue({
-        // body 태그 안에서 app이라는 아이디를 가진 tag를 찾아서 인스턴스를 붙이겠다는 의미 이 element를 사용함으로써 해당 태그 안에서  vue의 기능과 속성이 유효해진다.
-        el: "#app",
+        /*el: "#app" body 태그 안에서 app이라는 아이디를 가진 tag를 찾아서 인스턴스를 붙이겠다는 의미 이 element를 사용함으로써 해당 태그 안에서  vue의 기능과 속성이 유효해진다. */
+        el: "#app", // 인스턴스가 그려지는 화면의 시작점 (특정 HTML 태그)
         data: {
           message: "hi",
         },
+        methods: {},
+        created: function () {},
       });
     </script>
   </body>
