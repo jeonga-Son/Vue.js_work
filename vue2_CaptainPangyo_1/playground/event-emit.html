@@ -33,7 +33,7 @@
           },
         },
       };
-      new Vue({
+      var vm = new Vue({
         el: "#app",
         components: {
           "app-header": appHeader,
@@ -44,7 +44,7 @@
             console.log("hi");
           },
           increaseNumber: function () {
-            this.num++;
+            this.num++; // data의 num을 가르킨다.
             console.log("숫자 : ", this.num);
           },
         },
