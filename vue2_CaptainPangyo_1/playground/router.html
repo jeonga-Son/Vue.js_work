@@ -7,17 +7,42 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <router-view></router-view>
+    </div>
 
     <!-- 순서 중요함. 먼저 vue.js 스크립트를 넣고, 이후에 router 스크립트를 넣는다.-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
 
     <script>
-      new VueRouter({});
+      var LoginComponent = {
+        template: "<div>login</div>",
+      };
+
+      var MainComponent = {
+        template: "<div>main</div>",
+      };
+
+      var router = new VueRouter({
+        // 페이지의 라우팅 정보
+        routes: [
+          {
+            // 페이지의 url
+            path: "/login",
+            // 해당 url에서 표시될 컴포넌트
+            component: LoginComponent,
+          },
+          {
+            path: "/main",
+            component: MainComponent,
+          },
+        ],
+      });
 
       new Vue({
         el: "#app",
+        router: router,
       });
     </script>
   </body>
