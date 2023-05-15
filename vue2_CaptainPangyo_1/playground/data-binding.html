@@ -16,6 +16,9 @@
       <div v-if="loading">Loading...</div>
       <div v-else>test user has been logged in</div>
       <div v-show="loading">Loading...</div>
+
+      <input type="text" v-model="message" />
+      <p>{{message}}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -28,6 +31,7 @@
           uuid: "abc1234",
           name: "text-blue",
           loading: true,
+          message: "",
         },
         computed: {
           doubleNum: function () {
