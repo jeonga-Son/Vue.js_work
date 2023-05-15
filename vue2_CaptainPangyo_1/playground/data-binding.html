@@ -8,8 +8,14 @@
   </head>
   <body>
     <div id="app">
-      <p>{{num}}</p>
+      <p v-bind:id="uuid" v-bind:class="name">{{num}}</p>
+      <!-- <p id="abc1234">{{num}}</p> -->
       <p>{{doubleNum}}</p>
+
+      <!-- v-if는 DOM에서 아예 제거가 되고, v-show는 style display none으로 화면에서만 사라지고 DOM 정보는 남아있다. -->
+      <div v-if="loading">Loading...</div>
+      <div v-else>test user has been logged in</div>
+      <div v-show="loading">Loading...</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,6 +25,9 @@
         el: "#app",
         data: {
           num: 10,
+          uuid: "abc1234",
+          name: "text-blue",
+          loading: true,
         },
         computed: {
           doubleNum: function () {
