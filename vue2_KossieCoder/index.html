@@ -8,32 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app">
-      <form v-on:submit.prevent="submit" action="">
-        <!-- <input type="text" :value="text" @keyup="updateText" /> <br /> -->
-        <input type="text" v-model="text" /> <br />
-        {{text}}
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <div id="app">{{ message.split('').reverse().join('') }}</div>
     <script>
       new Vue({
         el: "#app", // 뷰 인스턴스가 생성 되면서 id="app" => 이 태그 안에는 vue 코드 작성 가능
         data: {
-          year: 2023,
-          text: "text",
+          message: "안녕하세요",
         },
-        methods: {
-          submit() {
-            alert("submitted");
-            console.log("hello");
-          },
-          // updateText(event) {
-          //   //키보드 이벤트
-          //   // console.log(event);
-          //   this.text = event.target.value;
-          // },
-        },
+        methods: {},
       });
     </script>
   </body>
