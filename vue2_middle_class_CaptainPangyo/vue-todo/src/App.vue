@@ -5,6 +5,7 @@
     <TodoList
       v-bind:propsdata="todoItems"
       v-on:removeItem="removeOneItem"
+      v-on:toggleItem="toggleOneItem"
     ></TodoList>
     <TodoFooter></TodoFooter>
   </div>
@@ -26,13 +27,19 @@ export default {
     addOneItem: function(todoItem) {
       // 저장하는 로직
       // localStorage.setItem(키, 값);
-      var obj = { copleted: false, item: todoItem };
+      var obj = { completed: false, item: todoItem };
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
     removeOneItem: function(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
+    },
+    toggleOneItem: function(todoItem, index) {
+      this.todoItems[index].completed = !this.todoItems[index].completed;
+      // 로컬 스토리지의 데이터를 갱신
+      localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     }
   },
   // 생성되는 시점에 created 안의 로직이 한 번 호출된다.
