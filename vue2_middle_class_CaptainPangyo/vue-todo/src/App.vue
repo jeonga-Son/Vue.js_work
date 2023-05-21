@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput></TodoInput>
+    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
     <TodoList v-bind:propsdata="todoItems"></TodoList>
     <TodoFooter></TodoFooter>
   </div>
@@ -18,6 +18,15 @@ export default {
     return {
       todoItems: []
     };
+  },
+  methods: {
+    addOneItem: function(todoItem) {
+      // 저장하는 로직
+      // localStorage.setItem(키, 값);
+      var obj = { copleted: false, item: todoItem };
+      localStorage.setItem(todoItem, JSON.stringify(obj));
+      this.todoItems.push(obj);
+    }
   },
   // 생성되는 시점에 created 안의 로직이 한 번 호출된다.
   created: function() {

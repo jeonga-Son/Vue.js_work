@@ -16,11 +16,9 @@ export default {
   },
   methods: {
     addTodo() {
-      // 저장하는 로직
-      // localStorage.setItem(키, 값);
+
       if (this.newTodoItem !== "") {
-        var obj = { copleted: false, item: this.newTodoItem };
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.$emit("addTodoItem", this.newTodoItem);
         this.clearInput();
       }
     },
