@@ -2,7 +2,10 @@
   <div id="app">
     <TodoHeader></TodoHeader>
     <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
-    <TodoList v-bind:propsdata="todoItems"></TodoList>
+    <TodoList
+      v-bind:propsdata="todoItems"
+      v-on:removeItem="removeOneItem"
+    ></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -26,6 +29,10 @@ export default {
       var obj = { copleted: false, item: todoItem };
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
+    },
+    removeOneItem: function(todoItem, index) {
+      localStorage.removeItem(todoItem.item);
+      this.todoItems.splice(index, 1);
     }
   },
   // 생성되는 시점에 created 안의 로직이 한 번 호출된다.
