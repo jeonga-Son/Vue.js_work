@@ -27,7 +27,7 @@ export default {
     addOneItem: function(todoItem) {
       // 저장하는 로직
       // localStorage.setItem(키, 값);
-      var obj = { completed: false, item: todoItem };
+      const obj = { completed: false, item: todoItem };
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
@@ -49,7 +49,7 @@ export default {
   // 생성되는 시점에 created 안의 로직이 한 번 호출된다.
   created: function() {
     if (localStorage.length > 0) {
-      for (var i = 0; i < localStorage.length; i++) {
+      for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) != "loglevel:webpack-dev-server") {
           // console.log(JSON.parse(localStorage.getItem(localStorage.key(i))));
           this.todoItems.push(
