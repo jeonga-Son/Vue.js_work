@@ -60,7 +60,6 @@ export default {
     }
   },
   components: {
-    // 컴포넌트 태그명 : 컴포넌트 내용
     TodoHeader,
     TodoInput,
     TodoList,
