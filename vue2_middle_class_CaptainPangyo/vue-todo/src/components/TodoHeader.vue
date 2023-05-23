@@ -4,10 +4,6 @@
   </header>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 h1 {
   color: #2f3b52;

@@ -19,7 +19,7 @@
 <script>
 import Modal from "./common/Modal.vue";
 export default {
-  data: function() {
+  data() {
     return {
       newTodoItem: "",
       showModal: false
@@ -34,12 +34,12 @@ export default {
         this.showModal = !this.showModal;
       }
     },
-    clearInput: function() {
+    clearInput() {
       this.newTodoItem = "";
     }
   },
   components: {
-    Modal: Modal
+    Modal
   }
 };
 </script>
