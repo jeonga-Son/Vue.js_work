@@ -92,6 +92,10 @@
 2. 자바스크립트 Promise 쉽게 이해하기
    https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 
+# actions란?
+- 비동기 처리 로직을 선언하는 메서드. 비동기 로직을 담당하는 mutations
+- 데이터 요청, Promise, ES6 async과 같은 비동기 처리는 모두 actions에 선언
+
 # Flux란?
 
 - MVC 패턴의 복잡한 데이터 흐름 문제를 해결하는 개발 패턴 => Undirectional data flow
