@@ -9,12 +9,12 @@
         <i
           class="checkBtn fas fa-check"
           v-bind:class="{ checkBtnCompleted: todoItem.completed }"
-          v-on:click="toggleComplete(todoItem, index)"
+          v-on:click="toggleComplete({ todoItem, index })"
         ></i>
         <span v-bind:class="{ textCompleted: todoItem.completed }">{{
           todoItem.item
         }}</span>
-        <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+        <span class="removeBtn" v-on:click="removeTodo({ todoItem, index })">
           <i class="fas fa-trash-alt"></i>
         </span>
       </li>
@@ -23,27 +23,19 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   methods: {
-    removeTodo(todoItem, index) {
-      this.$store.commit("removeOneItem", { todoItem, index });
-    },
-    toggleComplete(todoItem, index) {
-      this.$store.commit("toggleOneItem", { todoItem, index });
-    }
+    // mapMutations은 인자를 선언 안해도 호출하는 단에서 인자가 있으면 암묵적으로 넘긴다.
+    // 인자 수를 잘 맞춰야 한다.
+    ...mapMutations({
+      removeTodo: "removeOneItem",
+      toggleComplete: "toggleOneItem"
+    })
   },
   computed: {
-    // todoItems() {
-    //   return this.$store.getters.storedTodoItems;
-    // }
     ...mapGetters(["storedTodoItems"])
-
-    // getters의 이름이 다를 경우 이렇게 사용한다.
-    // ...mapGetters({
-    //   todoItems: "storedTodoItems"
-    // })
   }
 };
 </script>
