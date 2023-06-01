@@ -14,10 +14,10 @@ export default {
     };
   },
   created() {
-    var base = this;
-
+    // 화살표 함수를 쓰게 되면 this를 계속 바인딩 할필요가 없다.
+    // var base = this;
     fetchNewsList()
-      .then((response) => (base.users = response.data))
+      .then((response) => (this.users = response.data))
       .catch((error) => console.log(error));
   },
 };

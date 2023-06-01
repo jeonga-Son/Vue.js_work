@@ -14,10 +14,8 @@ export default {
     };
   },
   created() {
-    var base = this;
-
     fetchJobsList()
-      .then((response) => (base.jobList = response.data))
+      .then((response) => (this.jobList = response.data))
       .catch((error) => console.log(error));
   },
 };
