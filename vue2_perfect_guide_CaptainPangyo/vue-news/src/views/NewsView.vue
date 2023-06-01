@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { fetchNewsList } from "../api/index.js";
 
 export default {
   data() {
@@ -16,15 +16,9 @@ export default {
   created() {
     var base = this;
 
-    axios
-      .get("https://api.hnpwa.com/v0/news/1.json")
-      .then((response) => {
-        console.log(response);
-        base.users = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetchNewsList()
+      .then((response) => (base.users = response.data))
+      .catch((error) => console.log(error));
   },
 };
 </script>

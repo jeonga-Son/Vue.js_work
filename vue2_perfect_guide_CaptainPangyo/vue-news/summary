@@ -26,3 +26,6 @@ CLI 2.x vs CLI 3.x
 
 - HNPWA API
   https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md
+
+- Reactivity in Depth
+  https://vuejs.org/guide/extras/reactivity-in-depth.html#ad
