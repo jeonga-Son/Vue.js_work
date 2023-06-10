@@ -2,18 +2,22 @@
   <div class="user-container">
     <div><i class="fa-solid fa-user"></i></div>
     <div class="user-description">
-      <!-- <router-link :to="`/user/${fetchedItem.user}`">
-        {{ fetchedItem.user }}
-      </router-link>
+      <div>{{ userInfo.id }}</div>
       <div class="time">
-        {{ fetchedItem.time_ago }}
-      </div> -->
+        {{ userInfo.created }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
+  },
+};
 </script>
 
 <style scoped>
