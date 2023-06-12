@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-profile></user-profile>
+    <user-profile :info="userInfo"></user-profile>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ import UserProfile from "../components/UserProfile.vue";
 export default {
   components: {
     UserProfile,
+  },
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
   },
   created() {
     const userName = this.$route.params.id;
