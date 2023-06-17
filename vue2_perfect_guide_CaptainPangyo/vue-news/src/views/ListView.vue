@@ -1,9 +1,15 @@
 <template>
-  <div>list</div>
+  <list-item></list-item>
 </template>
 
 <script>
-export default {};
+import ListItem from "../components/ListItem.vue";
+
+export default {
+  components: {
+    ListItem,
+  },
+};
 </script>
 
 <style></style>
