@@ -29,3 +29,16 @@ CLI 2.x vs CLI 3.x
 
 - Reactivity in Depth
   https://vuejs.org/guide/extras/reactivity-in-depth.html#ad
+
+- 데이터 호출 시점
+  - 1. 라우터 네비게이션 가드
+
+    - 특정 URL로 접근하기 전의 동작을 정의하는 속성(함수)
+    - 네비게이션 가드 블로그 글 링크 : https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards/
+
+  - 2. 컴포넌트 라이프 사이클 훅
+
+    - created : (컴포넌트가 생성)되자 마자 호출되는 로직
+      - created 라이프 사이클 훅 API 문서 : https://vuejs.org/api/#created
+
+
