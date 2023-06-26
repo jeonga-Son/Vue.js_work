@@ -47,12 +47,36 @@ export const router = new VueRouter({
       name: "ask",
       // component: CreateListView("AskView"),
       component: AskView,
+      beforeEnter: (to, from, next) => {
+        bus.$emit("start:spinner");
+        store
+          .dispatch("FETCH_LIST", to.name)
+          .then(() => {
+            console.log("fetched");
+            // bus.$emit("end:spinner");
+            next();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
     },
     {
       path: "/jobs",
       name: "jobs",
       // component: CreateListView("JobsView"),
       component: JobsView,
+      beforeEnter: (to, from, next) => {
+        bus.$emit("start:spinner");
+        store
+          .dispatch("FETCH_LIST", to.name)
+          .then(() => {
+            next();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
     },
     {
       path: "/item/:id",
