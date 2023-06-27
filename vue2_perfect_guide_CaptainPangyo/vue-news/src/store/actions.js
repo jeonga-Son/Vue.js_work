@@ -8,15 +8,22 @@ import {
 } from "../api/index.js";
 
 export default {
-  FETCH_NEWS(context) {
-    return fetchNewsList()
-      .then((response) => {
-        context.commit("SET_NEWS", response.data);
-        return response;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  // promise
+  // FETCH_NEWS(context) {
+  //   return fetchNewsList()
+  //     .then((response) => {
+  //       context.commit("SET_NEWS", response.data);
+  //       return response;
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
+  // async
+  async FETCH_NEWS(context) {
+    const response = await fetchNewsList();
+    context.commit("SET_NEWS", response.data);
+    return response;
   },
   FETCH_JOBS({ commit }) {
     return fetchJobsList()
