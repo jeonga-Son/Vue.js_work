@@ -31,6 +31,7 @@ CLI 2.x vs CLI 3.x
   https://vuejs.org/guide/extras/reactivity-in-depth.html#ad
 
 - 데이터 호출 시점
+
   - 1. 라우터 네비게이션 가드
 
     - 특정 URL로 접근하기 전의 동작을 정의하는 속성(함수)
@@ -41,4 +42,5 @@ CLI 2.x vs CLI 3.x
     - created : (컴포넌트가 생성)되자 마자 호출되는 로직
       - created 라이프 사이클 훅 API 문서 : https://vuejs.org/api/#created
 
-
+- 자바스크립트 async와 await
+  - https://joshua1988.github.io/web-development/javascript/js-async-await/
