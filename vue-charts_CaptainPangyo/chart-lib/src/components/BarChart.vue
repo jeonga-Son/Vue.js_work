@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <h2>Chart.js</h2>
-    <canvas id="myChart" width="400" height="400"></canvas>
-  </div>
+  <canvas id="myChart" width="400" height="400"></canvas>
 </template>
 
 <script>
