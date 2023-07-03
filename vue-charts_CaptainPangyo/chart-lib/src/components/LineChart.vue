@@ -3,11 +3,9 @@
 </template>
 
 <script>
-import Chart from "chart.js";
-
 export default {
   mounted() {
-    let chart = new Chart(this.$refs.lineChart.getContext("2d"), {
+    let chart = new this.$_Chart(this.$refs.lineChart.getContext("2d"), {
       type: "line",
       data: {
         labels: [
