@@ -1,5 +1,5 @@
 <template>
-  <canvas id="lineChart"></canvas>
+  <canvas ref="lineChart" id="lineChart"></canvas>
 </template>
 
 <script>
@@ -7,9 +7,7 @@ import Chart from "chart.js";
 
 export default {
   mounted() {
-    const ctx = document.getElementById("lineChart");
-
-    let chart = new Chart(ctx, {
+    let chart = new Chart(this.$refs.lineChart.getContext("2d"), {
       type: "line",
       data: {
         labels: [
